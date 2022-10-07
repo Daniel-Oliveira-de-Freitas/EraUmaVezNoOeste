@@ -14,6 +14,13 @@ config/name="Novo Projeto De Jogo"
 run/main_scene="res://Scenes/fase.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=960
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
