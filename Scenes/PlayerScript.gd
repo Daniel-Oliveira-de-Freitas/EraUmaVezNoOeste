@@ -1,7 +1,9 @@
 extends KinematicBody2D
 
-var motion = Vector2.ZERO;
-var speed = 200;
+var motion = Vector2.ZERO
+var speed = 200
+var gravity = 1200
+var jump_force = -600
 
 func _process(delta):
 	
@@ -23,14 +25,18 @@ func _process(delta):
 				
 		elif  Input.is_action_pressed("ui_up"):
 			$AnimatedSprite.play("Jump")
-			motion.y = -200
+			motion.y = jump_force
+				
+		elif  Input.is_action_pressed("ui_down"):
+			$AnimatedSprite.play("Slide")
+			
 		else:
 			motion.x = 0;
 			$AnimatedSprite.play("Idle")
 			move_and_slide(motion,Vector2.UP)
 			
 	else:
-		motion.y += 10	
+		motion.y += gravity * delta	
 		print("ar")
 		
 	
